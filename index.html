@@ -14,9 +14,21 @@
 			position:fixed;
 			top:20px
 		}
+		body {
+			position: relative;
+		}
+		#nav-sidebar .nav > .active > a,
+		#nav-sidebar .nav > .active:hover > a,
+		#nav-sidebar .nav > .active:focus > a {
+			padding-left: 18px;
+			font-weight: bold;
+			color: #563d7c;
+			background-color: transparent;
+			border-left: 2px solid #563d7c;
+		}
 	</style>
 </head>
-<body>
+<body data-spy="scroll" data-target="#nav-sidebar">
 	<div class="jumbotron">
 		<div class="container">
 			<h1 id="top">LUÍS PUHL</h1>
@@ -31,147 +43,148 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-9"  data-spy="scroll" data-target="#nav-sidebar">
+			<div class="col-md-9">
 
-	<h2 id="education">EDUCAÇÃO</h2>
-	<p>Universidade Estadual Paulista “Júlio de Mesquita Filho” (UNESP)
-	Bacharelado em Ciência da Computação (2017)</p>
+				<h2 id="education">EDUCAÇÃO</h2>
+				<p>Universidade Estadual Paulista “Júlio de Mesquita Filho” (UNESP)
+				Bacharelado em Ciência da Computação (2017)</p>
 
-	<p>Centro Paula Souza – ETEC “Joaquim Ferreira do Amaral” Técnico de
-	Informática (2011).</p>
-	<hr />
+				<p>Centro Paula Souza – ETEC “Joaquim Ferreira do Amaral” Técnico de
+				Informática (2011).</p>
+				<hr />
 
-	<h2 id="experience">EXPERIÊNCIA</h2>
-	<ul>
+				<h2 id="experience">EXPERIÊNCIA</h2>
+				<ul>
 
-		<li>
-			<p>
-				<h3>UNESP - PET-BSI</h3> - Programa de Educação Tutorial O PET é uma
-				proposta de exploração de novas metodologias para o
-				ensino-aprendizagem.
-			</p>
-			<ul>
-				<li>
-					Jan/16 – Mar/17 Desenvolvedor e coordenador de IoT.
-				</li>
-			</ul>
-		</li>
+					<li>
+						<p>
+							<h3>UNESP - PET-BSI</h3> - Programa de Educação Tutorial O PET é uma
+							proposta de exploração de novas metodologias para o
+							ensino-aprendizagem.
+						</p>
+						<ul>
+							<li>
+								Jan/16 – Mar/17 Desenvolvedor e coordenador de IoT.
+							</li>
+						</ul>
+					</li>
 
-		<li>
-			<p>
+					<li>
+						<p>
 
-				<h3>UNESP - LTIA</h3> - Laboratório de Tecnologia de Informática
-				Aplicada (www.ltia.fc.unesp.br).
+							<h3>UNESP - LTIA</h3> - Laboratório de Tecnologia de Informática
+							Aplicada (www.ltia.fc.unesp.br).
 
-			</p>
-			<ul>
-				<li>
+						</p>
+						<ul>
+							<li>
 
-					Set/15 – Jan/16 Estagiário – Mantenedor de servidores Linux
-					e desenvolvedor web.
+								Set/15 – Jan/16 Estagiário – Mantenedor de servidores Linux
+								e desenvolvedor web.
 
-				</li>
-				<li>
+							</li>
+							<li>
 
-					Jan/15 – Set/15 Estagiário – Desenvolvedor Web com Drupal –
-					LTIA em conjunto com Global Digital Community
-					(globaldigitalcommunity.com).
+								Jan/15 – Set/15 Estagiário – Desenvolvedor Web com Drupal –
+								LTIA em conjunto com Global Digital Community
+								(globaldigitalcommunity.com).
 
-				</li>
-			</ul>
-		</li>
+							</li>
+						</ul>
+					</li>
 
-		<li>
-			<p>
+					<li>
+						<p>
 
-				<h3>UNESP – FEB</h3> - DTI (Diretoria Técnica de Informática)
+							<h3>UNESP – FEB</h3> - DTI (Diretoria Técnica de Informática)
 
-			</p>
-			<ul>
-				<li>
+						</p>
+						<ul>
+							<li>
 
-					Jan/14 – Dez/14 Estagiário no DTI (Diretoria Técnica de
-					Informática): Manutenção em sistemas Java MVC e construção
-					do ‘Sistema de Egressos -FEB’, pelos requisitos do diretor
-					da faculdade, mantendo contato com os alunos formados e
-					incentivando a formação continuada.
+								Jan/14 – Dez/14 Estagiário no DTI (Diretoria Técnica de
+								Informática): Manutenção em sistemas Java MVC e construção
+								do ‘Sistema de Egressos -FEB’, pelos requisitos do diretor
+								da faculdade, mantendo contato com os alunos formados e
+								incentivando a formação continuada.
 
-				</li>
-				<li>
+							</li>
+							<li>
 
-					Sep/12 – Dec/13Estagiário no DTA (Divisão Técnica
-					Acadêmica): Manter e documentar software PHP legado.
+								Sep/12 – Dec/13Estagiário no DTA (Divisão Técnica
+								Acadêmica): Manter e documentar software PHP legado.
 
-				</li>
-			</ul>
-		</li>
+							</li>
+						</ul>
+					</li>
 
-		<li>
-			<h3>Extra</h3>
-			<ul>
-				<li>Set/14 – Dez/16 Garçom freelancer – Empório São Lourenço,
-					Friggere Pizza Frita entre outros.</li>
-			</ul>
-		</li>
+					<li>
+						<h3>Extra</h3>
+						<ul>
+							<li>Set/14 – Dez/16 Garçom freelancer – Empório São Lourenço,
+								Friggere Pizza Frita entre outros.</li>
+						</ul>
+					</li>
 
-	</ul>
-	<hr />
+				</ul>
+				<hr />
 
-	<h2 id="skills">FERRAMENTAS TÉCNICAS</h2>
-	<ul>
-		<li>Plataformas como administrador: Debian Linux and Ubuntu Linux;</li>
-		<li>RDBMS: MySQL (6 meses) and PostgreSQL (9 meses);</li>
-	</ul>
-	<hr />
+				<h2 id="skills">FERRAMENTAS TÉCNICAS</h2>
+				<ul>
+					<li>Plataformas como administrador: Debian Linux and Ubuntu Linux;</li>
+					<li>RDBMS: MySQL (6 meses) and PostgreSQL (9 meses);</li>
+				</ul>
+				<hr />
 
-	<h2 id="laguages">LÍNGUAS</h2>
-	<ul>
-		<li>
-			<h3>Portugês</h3>
-			<ul>
-				<li>Nativo</li>
-			</ul>
-		</li>
-		<li>
-			<h3>Inglês</h3>
-			<ul>
-				<li>Leitura: Avançada</li>
-				<li>Escrita: Intermediária</li>
-				<li>Conversação: Básica</li>
-			</ul>
-		</li>
-		<li>
-			<h3>Alemão</h3>
-			<ul>
-				<li>Conversação: Básica (uso com familiares)</li>
-			</ul>
-		</li>
-	</ul>
-	<hr />
+				<h2 id="laguages">LÍNGUAS</h2>
+				<ul>
+					<li>
+						<h3>Portugês</h3>
+						<ul>
+							<li>Nativo</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Inglês</h3>
+						<ul>
+							<li>Leitura: Avançada</li>
+							<li>Escrita: Intermediária</li>
+							<li>Conversação: Básica</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Alemão</h3>
+						<ul>
+							<li>Conversação: Básica (uso com familiares)</li>
+						</ul>
+					</li>
+				</ul>
+				<hr />
 
-	<h2 id="interests">INTERESSES</h2>
-	<ul>
-		<li>Arquitetura Web</li>
-		<li>Desenvolvimento em servidores (back-end)</li>
-		<li>IoT - Integração dispositivo-nuvem</li>
-	</ul>
+				<h2 id="interests">INTERESSES</h2>
+				<ul>
+					<li>Arquitetura Web</li>
+					<li>Desenvolvimento em servidores (back-end)</li>
+					<li>IoT - Integração dispositivo-nuvem</li>
+				</ul>
+				<hr />
 
-	<h2 id="contact">CONTATO</h2>
-	<p>
-		<span>luispuhl@gmail.com</span> <br>
-		<span>https://github.com/luis-puhl</span> <br>
-		<span>+55 14 9 9135-9740</span> <br>
-		<span>Rua dos Radioamadores 1-75 – Jd. Brasil, 17011-090</span> <br>
-		<span>Bauru, SP, BRASIL</span> <br>
-	</p>
+				<h2 id="contact">CONTATO</h2>
+				<p>
+					<span>luispuhl@gmail.com</span> <br>
+					<span>https://github.com/luis-puhl</span> <br>
+					<span>+55 14 9 9135-9740</span> <br>
+					<span>Rua dos Radioamadores 1-75 – Jd. Brasil, 17011-090</span> <br>
+					<span>Bauru, SP, BRASIL</span> <br>
+				</p>
 
 
 			</div><!-- col -->
-			<div class="col-md-3" role="complementary">
-				<nav class="bs-docs-sidebar hidden-print hidden-sm hidden-xs"
+			<div class="col-md-3" role="complementary" id="scroll-spy-nav">
+				<nav class="hidden-print hidden-sm hidden-xs"
 				data-spy="affix" data-offset-top="340"
 				id="nav-sidebar">
-					<ul class="nav bs-docs-sidenav">
+					<ul class="nav">
 						<li><a href="#profile">PERFIL</a></li>
 						<li><a href="#education">EDUCAÇÃO</a></li>
 						<li><a href="#experience">EXPERIÊNCIA</a></li>
