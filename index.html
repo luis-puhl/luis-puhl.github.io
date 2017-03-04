@@ -299,7 +299,7 @@
 		</div><!-- row -->
 		<hr>
 		<footer>
-			<p>Made with Bootstrap by Luis Puhl. Hosted by Github.</p>
+			<p>Made with Bootstrap by Luis Puhl. Hosted by Github. Got <span id="pageviews">#</span> views</p>
 		</footer>
 	</div><!-- container -->
 
@@ -313,26 +313,20 @@
 	<script>
 		// Initialize Firebase
 		var config = {
-			apiKey: "AIzaSyBx2d4GDZlPuW__FouuyPnaQrvS_kjU9gM",
-			authDomain: "traker-ae14a.firebaseapp.com",
-			databaseURL: "https://traker-ae14a.firebaseio.com",
-			storageBucket: "traker-ae14a.appspot.com",
-			messagingSenderId: "1034702936745"
+			apiKey: 'AIzaSyBx2d4GDZlPuW__FouuyPnaQrvS_kjU9gM',
+			authDomain: 'traker-ae14a.firebaseapp.com',
+			databaseURL: 'https://traker-ae14a.firebaseio.com',
+			storageBucket: 'traker-ae14a.appspot.com',
+			messagingSenderId: '1034702936745'
 		};
 		firebase.initializeApp(config);
-		function writeTrackData() {
-			var track = {
-				userAgent: navigator.userAgent,
-				os: navigator.platform,
-				appVersion: navigator.appVersion,
-				doNotTrack: navigator.doNotTrack,
-				geolocation: navigator.geolocation,
-				language: navigator.language,
-				date: Firebase.ServerValue.TIMESTAMP
-			};
-			return firebase.database().ref().child('pageloads').push(track);
-		}
-		console.log(writeTrackData());
+		var counterRef = firebase.database().ref('counter');
+		var counter;
+		counterRef.once('value').then(function(dataSnapshot){
+			counter = dataSnapshot.val() + 1;
+			counterRef.set(counter);
+			document.getElementById('pageviews').innerHTML = counter;
+		});
 	</script>
 	<!-- Google Analytics -->
 	<script>
