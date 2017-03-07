@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="pt-br">
+<html lang="pt-BR">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="">
@@ -45,6 +45,11 @@
 
 	<link rel="stylesheet" href="/styles/main.css" media="screen">
 
+	<style>
+		html:not(:lang(pt-BR)) :lang(pt-BR),
+		html:not(:lang(en)) :lang(en){
+			display: none;
+		}
 	</style>
 </head>
 <body data-spy="scroll" data-target="#nav-sidebar">
@@ -53,10 +58,24 @@
 			<h1 id="top">LUÍS PUHL</h1>
 			<hr>
 
-			<h2 id="profile">PERFIL</h2>
-			<p>Profissional alinhado à inovação com enfoque na resolução de problemas
-			através do uso de tecnologias emergentes.</p>
-			<hr />
+			<h2 id="profile">
+				<span lang="en">PROFILE</span>
+				<span lang="pt-BR">PERFIL</span>
+			</h2>
+			<p>
+				<span lang="en">
+					Professional aligned to innovation with focus on problem
+					solving through the use of emerging technologies.
+				</span>
+				<span lang="pt-BR">
+					Profissional alinhado à inovação com enfoque na resolução
+					de problemas através do uso de tecnologias emergentes.
+				</span>
+			</p>
+			<select onchange="document.documentElement.lang=this.value">
+				<option value="pt-BR">Português Brasileiro</option>
+				<option value="en">English</option>
+			</select>
 		</div>
 	</div>
 
@@ -64,253 +83,329 @@
 		<div class="row">
 			<div class="col-md-9 col-xs-12">
 
-				<h2 id="education">EDUCAÇÃO</h2>
-				<p>Universidade Estadual Paulista “Júlio de Mesquita Filho” (UNESP)
-				Bacharelado em Ciência da Computação (2017)</p>
+				<div class="interests">
+					<h2 id="interests">
+						<span lang="en">INTERESTS</span>
+						<span lang="pt-BR">INTERESSES</span>
+					</h2>
+					<ul>
+						<li>
+							<span lang="en">Web Architecture</span>
+							<span lang="pt-BR">Arquitetura Web</span>
+						</li>
+						<li>
+							<span lang="en"></span>
+							<span lang="pt-BR"></span>
+							Desenvolvimento em servidores (back-end)
+						</li>
+						<li>
+							<span lang="en"></span>
+							<span lang="pt-BR"></span>
+							IoT - Integração dispositivo-nuvem
+						</li>
+					</ul>
+					<hr />
+				</div>
 
-				<p>Centro Paula Souza – ETEC “Joaquim Ferreira do Amaral” Técnico de
-				Informática (2011).</p>
-				<hr />
+				<div class="education">
+					<h2 id="education">
+						<span lang="en">EDUCATION</span>
+						<span lang="pt-BR">EDUCAÇÃO</span>
+					</h2>
+					<ul>
+						<li>
+							<h3>UNESP Bauru</h3>
+							<p>
+								<span lang="en">São Paulo State University</span>
+								<span lang="pt-BR">Universidade Estadual Paulista</span>
+								“Júlio de Mesquita Filho” - UNESP (Bauru - SP)
 
-				<h2 id="experience">EXPERIÊNCIA</h2>
-				<ul>
+								<br>
+								<span lang="en">Bachelor of Computer Science</span>
+								<span lang="pt-BR">Bacharelado em Ciência da Computação</span>
+								(2017).
+							</p>
+						</li>
 
-					<li>
-						<p>
-							<h3>UNESP - PET-BSI</h3> - Programa de Educação Tutorial O PET é uma
-							proposta de exploração de novas metodologias para o
-							ensino-aprendizagem.
-						</p>
-						<ul>
-							<li>
-								Jan/16 – Mar/17 Desenvolvedor e coordenador de IoT.
-							</li>
-						</ul>
-					</li>
+						<li>
+							<h3>ETEC Jaú</h3>
+							<p>
+								<span lang="en">Paula Souza Center</span>
+								<span lang="pt-BR">Centro Paula Souza</span>
+								 – ETEC “Joaquim Ferreira do Amaral” (Jaú - SP)
+								<br>
+								<span lang="en">IT Technician</span>
+								<span lang="pt-BR">Técnico de Informática</span>
+								(2011).
+							</p>
+						</li>
+					</ul>
+					<hr />
+				</div>
 
-					<li>
-						<p>
+				<div class="experience">
+					<h2 id="experience">EXPERIÊNCIA</h2>
+					<ul>
 
-							<h3>UNESP - LTIA</h3> - Laboratório de Tecnologia de Informática
-							Aplicada (www.ltia.fc.unesp.br).
+						<li>
+							<p>
+								<h3>UNESP - PET-BSI</h3> - Programa de Educação Tutorial O PET é uma
+								proposta de exploração de novas metodologias para o
+								ensino-aprendizagem.
+							</p>
+							<ul>
+								<li>
+									Jan/16 – Mar/17 Desenvolvedor e coordenador de IoT.
+								</li>
+							</ul>
+						</li>
 
-						</p>
-						<ul>
-							<li>
+						<li>
+							<p>
 
-								Set/15 – Jan/16 Estagiário – Mantenedor de servidores Linux
-								e desenvolvedor web.
+								<h3>UNESP - LTIA</h3> - Laboratório de Tecnologia de Informática
+								Aplicada (www.ltia.fc.unesp.br).
 
-							</li>
-							<li>
+							</p>
+							<ul>
+								<li>
 
-								Jan/15 – Set/15 Estagiário – Desenvolvedor Web com Drupal –
-								LTIA em conjunto com Global Digital Community
-								(globaldigitalcommunity.com).
+									Set/15 – Jan/16 Estagiário – Mantenedor de servidores Linux
+									e desenvolvedor web.
 
-							</li>
-						</ul>
-					</li>
+								</li>
+								<li>
 
-					<li>
-						<p>
+									Jan/15 – Set/15 Estagiário – Desenvolvedor Web com Drupal –
+									LTIA em conjunto com Global Digital Community
+									(globaldigitalcommunity.com).
 
-							<h3>UNESP – FEB</h3> - DTI (Diretoria Técnica de Informática)
+								</li>
+							</ul>
+						</li>
 
-						</p>
-						<ul>
-							<li>
+						<li>
+							<p>
 
-								Jan/14 – Dez/14 Estagiário no DTI (Diretoria Técnica de
-								Informática): Manutenção em sistemas Java MVC e construção
-								do ‘Sistema de Egressos -FEB’, pelos requisitos do diretor
-								da faculdade, mantendo contato com os alunos formados e
-								incentivando a formação continuada.
+								<h3>UNESP – FEB</h3> - DTI (Diretoria Técnica de Informática)
 
-							</li>
-							<li>
+							</p>
+							<ul>
+								<li>
 
-								Sep/12 – Dec/13Estagiário no DTA (Divisão Técnica
-								Acadêmica): Manter e documentar software PHP legado.
+									Jan/14 – Dez/14 Estagiário no DTI (Diretoria Técnica de
+									Informática): Manutenção em sistemas Java MVC e construção
+									do ‘Sistema de Egressos -FEB’, pelos requisitos do diretor
+									da faculdade, mantendo contato com os alunos formados e
+									incentivando a formação continuada.
 
-							</li>
-						</ul>
-					</li>
+								</li>
+								<li>
 
-					<li>
-						<h3>Extra</h3>
-						<ul>
-							<li>Set/14 – Dez/16 Garçom freelancer – Empório São Lourenço,
-								Friggere Pizza Frita entre outros.</li>
-						</ul>
-					</li>
-				</ul>
-				<hr />
+									Sep/12 – Dec/13Estagiário no DTA (Divisão Técnica
+									Acadêmica): Manter e documentar software PHP legado.
 
-				<h2 id="skills">FERRAMENTAS TÉCNICAS</h2>
-				<h3>Habilidades</h3>
-				<ul>
-					<li>
-						Javascript
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 95%;" aria-valuenow="95"
-							aria-valuemin="0" aria-valuemax="100">
-								3 anos
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<h3>Extra</h3>
+							<ul>
+								<li>Set/14 – Dez/16 Garçom freelancer – Empório São Lourenço,
+									Friggere Pizza Frita entre outros.</li>
+							</ul>
+						</li>
+					</ul>
+					<hr />
+				</div>
+
+				<div class="skills">
+					<h2 id="skills">FERRAMENTAS TÉCNICAS</h2>
+					<h3>Habilidades</h3>
+					<ul>
+						<li>
+							Javascript
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 95%;" aria-valuenow="95"
+								aria-valuemin="0" aria-valuemax="100">
+									3 anos
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						C/C++
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 90%;" aria-valuenow="90"
-							aria-valuemin="0" aria-valuemax="100">
-								3 anos
+						</li>
+						<li>
+							C/C++
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 90%;" aria-valuenow="90"
+								aria-valuemin="0" aria-valuemax="100">
+									3 anos
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						HTML
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 100%;" aria-valuenow="100"
-							aria-valuemin="0" aria-valuemax="100">
-								3 anos
+						</li>
+						<li>
+							HTML
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 100%;" aria-valuenow="100"
+								aria-valuemin="0" aria-valuemax="100">
+									3 anos
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						Java
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 90%;" aria-valuenow="90"
-							aria-valuemin="0" aria-valuemax="100">
-								2 anos
+						</li>
+						<li>
+							Java
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 90%;" aria-valuenow="90"
+								aria-valuemin="0" aria-valuemax="100">
+									2 anos
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						PHP
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 60%;" aria-valuenow="60"
-							aria-valuemin="0" aria-valuemax="100">
-								2 anos
+						</li>
+						<li>
+							PHP
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 60%;" aria-valuenow="60"
+								aria-valuemin="0" aria-valuemax="100">
+									2 anos
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						SQL
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 50%;" aria-valuenow="50"
-							aria-valuemin="0" aria-valuemax="100">
-								2 anos
+						</li>
+						<li>
+							SQL
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 50%;" aria-valuenow="50"
+								aria-valuemin="0" aria-valuemax="100">
+									2 anos
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						NODE.js
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 40%;" aria-valuenow="40"
-							aria-valuemin="0" aria-valuemax="100">
-								1 ano
+						</li>
+						<li>
+							NODE.js
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 40%;" aria-valuenow="40"
+								aria-valuemin="0" aria-valuemax="100">
+									1 ano
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						XML
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 40%;" aria-valuenow="60"
-							aria-valuemin="0" aria-valuemax="100">
-								1 ano
+						</li>
+						<li>
+							XML
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 40%;" aria-valuenow="60"
+								aria-valuemin="0" aria-valuemax="100">
+									1 ano
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						Jquery
-						<div class="progress">
-							<div class="progress-bar" role="progressbar"
-							style="width: 30%;" aria-valuenow="30"
-							aria-valuemin="0" aria-valuemax="100">
-								1 ano
+						</li>
+						<li>
+							Jquery
+							<div class="progress">
+								<div class="progress-bar" role="progressbar"
+								style="width: 30%;" aria-valuenow="30"
+								aria-valuemin="0" aria-valuemax="100">
+									1 ano
+								</div>
 							</div>
-						</div>
-					</li>
-				</ul>
+						</li>
+					</ul>
 
-				<ul>
-					<li>Plataformas como administrador: Debian Linux e Ubuntu Linux;</li>
-					<li>RDBMS: MySQL (6 meses) e PostgreSQL (9 meses);</li>
-				</ul>
-				<hr />
+					<ul>
+						<li>Plataformas como administrador: Debian Linux e Ubuntu Linux;</li>
+						<li>RDBMS: MySQL (6 meses) e PostgreSQL (9 meses);</li>
+					</ul>
+					<hr />
+				</div>
 
-				<h2 id="laguages">LÍNGUAS</h2>
-				<ul>
-					<li>
-						<h3>Português</h3>
-						<ul>
-							<li>Nativo</li>
-						</ul>
-					</li>
-					<li>
-						<h3>Inglês</h3>
-						<ul>
-							<li>Leitura: Avançada</li>
-							<li>Escrita: Intermediária</li>
-							<li>Conversação: Básica</li>
-						</ul>
-					</li>
-					<li>
-						<h3>Alemão</h3>
-						<ul>
-							<li>Conversação: Básica (uso com familiares)</li>
-						</ul>
-					</li>
-				</ul>
-				<hr />
+				<div class="laguages">
+					<h2 id="laguages">LÍNGUAS</h2>
+					<ul>
+						<li>
+							<h3>Português</h3>
+							<ul>
+								<li>Nativo</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Inglês</h3>
+							<ul>
+								<li>Leitura: Avançada</li>
+								<li>Escrita: Intermediária</li>
+								<li>Conversação: Básica</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Alemão</h3>
+							<ul>
+								<li>Conversação: Básica (uso com familiares)</li>
+							</ul>
+						</li>
+					</ul>
+					<hr />
+				</div>
 
-				<h2 id="interests">INTERESSES</h2>
-				<ul>
-					<li>Arquitetura Web</li>
-					<li>Desenvolvimento em servidores (back-end)</li>
-					<li>IoT - Integração dispositivo-nuvem</li>
-				</ul>
-				<hr />
-
-				<h2 id="contact">CONTATO</h2>
-				<p>
-					<span>luispuhl@gmail.com</span> <br>
-					<span>https://github.com/luis-puhl</span> <br>
-					<span>+55 14 9 9135-9740</span> <br>
-					<span>Rua dos Radioamadores 1-75 – Jd. Brasil, 17011-090</span> <br>
-					<span>Bauru, SP, BRASIL</span> <br>
-				</p>
-
+				<div class="contact">
+					<h2 id="contact">CONTATO</h2>
+					<p>
+						<span>luispuhl@gmail.com</span> <br>
+						<span>https://github.com/luis-puhl</span> <br>
+						<span>+55 14 9 9135-9740</span> <br>
+						<span>Rua dos Radioamadores 1-75 – Jd. Brasil, 17011-090</span> <br>
+						<span>Bauru, SP, BRASIL</span> <br>
+					</p>
+				</div>
 
 			</div><!-- col -->
-			<div class="col-md-3" role="complementary" id="scroll-spy-nav">
+			<div class="col-md-3 navigator" role="complementary" id="scroll-spy-nav">
 				<nav class="hidden-print hidden-sm hidden-xs"
 				data-spy="affix" data-offset-top="340"
 				id="nav-sidebar">
 					<ul class="nav">
-						<li><a href="#profile">PERFIL</a></li>
-						<li><a href="#education">EDUCAÇÃO</a></li>
-						<li><a href="#experience">EXPERIÊNCIA</a></li>
-						<li><a href="#skills">FERRAMENTAS TÉCNICAS</a></li>
-						<li><a href="#laguages">LÍNGUAS</a></li>
-						<li><a href="#interests">INTERESSES</a></li>
-						<li><a href="#contact">CONTATO</a></li>
+						<li><a href="#profile">
+							<span lang="en">PROFILE</span>
+							<span lang="pt-BR">PERFIL</span>
+						</a></li>
+						<li><a href="#interests">
+							<span lang="en">INTERESTS</span>
+							<span lang="pt-BR">INTERESSES</span>
+						</a></li>
+						<li><a href="#education">
+							<span lang="en">EDUCATION</span>
+							<span lang="pt-BR">EDUCAÇÃO</span>
+						</a></li>
+						<li><a href="#experience">
+							<span lang="en">EXPERIENCE</span>
+							<span lang="pt-BR">EXPERIÊNCIA</span>
+						</a></li>
+						<li><a href="#skills">
+							<span lang="en">SKILLS</span>
+							<span lang="pt-BR">FERRAMENTAS TÉCNICAS</span>
+						</a></li>
+						<li><a href="#laguages">
+							<span lang="en">LAGUAGES</span>
+							<span lang="pt-BR">LÍNGUAS</span>
+						</a></li>
+						<li><a href="#contact">
+							<span lang="en">CONTACT</span>
+							<span lang="pt-BR">CONTATO</span>
+						</a></li>
 					</ul>
-					<a href="#top" class="back-to-top">Voltar ao topo</a>
+					<a href="#top" class="back-to-top">
+						<span lang="en">back to the top</span>
+						<span lang="pt-BR">Voltar ao topo</span>
+					</a>
 				</nav>
 			</div>
 		</div><!-- row -->
-		<hr>
-		<footer>
+
+		<footer class="hidden-print">
+			<hr>
 			<p>
 				Made with Bootstrap by Luis Puhl. Hosted by Github.
 				Got <span id="pageviews">#</span> views
@@ -326,7 +421,6 @@
 			</div>
 		</footer>
 	</div><!-- container -->
-
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
