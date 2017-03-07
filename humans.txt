@@ -3,12 +3,13 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
+	<name> -- <role> -- <twitter>
+	Luís Puhl -- Developer -- @luishps
 
 # THANKS
 
-  <name>
+	Google and Mozilla for the documentation
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3
+	HTML5, JS, CSS3

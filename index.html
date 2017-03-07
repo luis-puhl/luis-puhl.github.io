@@ -17,46 +17,34 @@
 	<!-- Add to homescreen for Chrome on Android -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="Luís Puhl - Currículo">
-	<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+	<link rel="icon" sizes="192x192" href="images/touch/icon-192x192.png">
 
 	<!-- Add to homescreen for Safari on iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-title" content="Luís Puhl - Currículo">
-	<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+	<link rel="apple-touch-icon" href="images/touch/icon-152x152.png">
 
 	<!-- Tile icon for Win8 (144x144 + tile color) -->
-	<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+	<meta name="msapplication-TileImage" content="images/touch/icon-144x144.png">
 	<meta name="msapplication-TileColor" content="#000000">
 
 	<!-- Color the status bar on mobile devices -->
 	<meta name="theme-color" content="#000000">
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		crossorigin="anonymous">
 
-	<style media="screen">
-		.affix#nav-sidebar{
-			position:fixed;
-			top:20px
-		}
-		body {
-			position: relative;
-		}
-		#nav-sidebar .nav > .active > a,
-		#nav-sidebar .nav > .active:hover > a,
-		#nav-sidebar .nav > .active:focus > a {
-			padding-left: 18px;
-			font-weight: bold;
-			color: #563d7c;
-			background-color: transparent;
-			border-left: 2px solid #563d7c;
-		}
-		.progress-bar {
-			min-width: 2em;
-		}
+	<link rel="stylesheet" href="/styles/main.css" media="screen">
+
 	</style>
 </head>
 <body data-spy="scroll" data-target="#nav-sidebar">
@@ -323,7 +311,19 @@
 		</div><!-- row -->
 		<hr>
 		<footer>
-			<p>Made with Bootstrap by Luis Puhl. Hosted by Github. Got <span id="pageviews">#</span> views</p>
+			<p>
+				Made with Bootstrap by Luis Puhl. Hosted by Github.
+				Got <span id="pageviews">#</span> views
+			</p>
+			<div>
+				Icons made by
+				<a href="http://www.freepik.com" title="Freepik">Freepik</a>
+				from
+				<a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
+				is licensed by
+				<a href="http://creativecommons.org/licenses/by/3.0/"
+					title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+			</div>
 		</footer>
 	</div><!-- container -->
 
@@ -356,29 +356,12 @@
 	</script>
 	<!-- end firebase -->
 
-	<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 	<!-- build:js scripts/main.min.js -->
-	<script src="scripts/wsk-main.js"></script>
+	<script src="scripts/main.js"></script>
 	<!-- endbuild -->
 
 	<!-- Saving this page on the Cache API -->
-	<script type="text/javascript">
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker
-			.register('./service-worker.js')
-			.then(function() { console.log('Service Worker Registered'); });
-	}
-	if('caches' in window) {
-		caches.open('luis-puhl-resume').then(function(cache) {
-			cache.keys().then(function(cachedRequests) {
-				// console.log(cachedRequests); // [Request, Request]
-			});
-			cache.addAll(['/']).then(function() {
-				// Cached!
-			});
-		});
-	}
-	</script>
+	<script src="scripts/service-worker-registration.js"></script>
 	<!-- end cache -->
 
 	<!-- Google Analytics -->

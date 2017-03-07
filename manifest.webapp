@@ -4,11 +4,15 @@
 	"launch_path": "/index.html",
 	"description": "Um currículo web baseado em padrões modernos.",
 	"icons": {
-		"128": "/images/touch/icon-128x128.png"
+		"128": "/images/touch/icon-128x128.png",
+		"144": "/images/touch/icon-144x144.png",
+		"152": "/images/touch/icon-152x152.png",
+		"192": "/images/touch/icon-192x192.png",
+		"256": "/images/touch/icon-256x256.png",
 	},
 	"developer": {
-		"name": "",
-		"url": ""
+		"name": "Luís Puhl",
+		"url": "https://github.com/luis-puhl/"
 	},
 	"installs_allowed_from": [
 		"*"
@@ -22,7 +26,7 @@
 			"description": "A modern web résumé based in moderns standards."
 	},
 		"pt": {
-				"name": "Luís Puhl - Currículo",
+			"name": "Luís Puhl - Currículo",
 			"description": "Um currículo web baseado em padrões modernos."
 		}
 	}
