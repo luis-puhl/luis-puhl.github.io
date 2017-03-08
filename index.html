@@ -72,10 +72,23 @@
 					de problemas através do uso de tecnologias emergentes.
 				</span>
 			</p>
-			<select onchange="document.documentElement.lang=this.value">
+			<select id="language-select"
+				onchange="document.documentElement.lang=this.value">
 				<option value="pt-BR">Português Brasileiro</option>
 				<option value="en">English</option>
 			</select>
+			<script type="text/javascript">
+			(function(){
+				var options = document.getElementById('language-select').children;
+				for (var i = 0; i < options.length; i++) {
+					var elem = options[i];
+					if (navigator.language.indexOf(elem.value) >= 0){
+						document.documentElement.lang = elem.value;
+						elem.setAttribute('selected', 'true');
+					}
+				}
+			})();
+			</script>
 		</div>
 	</div>
 
