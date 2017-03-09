@@ -51,6 +51,59 @@
 			display: none;
 		}
 	</style>
+	<style media="screen">
+		.print-only{
+			display: none;
+		}
+	</style>
+	<style media="print">
+		body {
+			background: white;
+		}
+		.jumbotron {
+			padding: 0;
+			margin: 0;
+		}
+		h2 {
+			margin: 0;
+		}
+		ul.print-2-col {
+			columns: 2;
+			column-gap: 2em;
+		}
+		ul.print-3-col {
+			columns: 3;
+			column-gap: 3em;
+		}
+		.progress {
+			display: block;
+			width: inherit;
+			background: #fff;
+			box-shadow: none;
+			height: inherit;
+			margin: inherit;
+			border: none;
+			border-radius: 0;
+		}
+		.progress-bar {
+			width: inherit;
+			min-width: 2em;
+			background: #fff;
+			color: #000;
+			float: none;
+			text-align: left;
+			line-height: normal;
+			box-shadow: none;
+			transition: inherit;
+		}
+		.hidden-print {
+			display: none;
+		}
+		hr {
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 <body data-spy="scroll" data-target="#nav-sidebar">
 	<div class="jumbotron">
@@ -72,7 +125,24 @@
 					de problemas através do uso de tecnologias emergentes.
 				</span>
 			</p>
-			<select id="language-select"
+
+			<a class="hidden-print" lang="en" href="./LuísPuhl-Resume.pdf" target="_blank">
+				<div class="btn btn-success">
+					Download PDF
+				</div>
+			</a>
+			<a class="hidden-print" lang="pt-BR" href="./LuísPuhl-Currículo.pdf" target="_blank">
+				<div class="btn btn-success">
+					Baixar PDF
+				</div>
+			</a>
+
+			<br class="hidden-print">
+			<br class="hidden-print">
+
+			<span class="hidden-print" lang="en">See in other languages:</span>
+			<span class="hidden-print" lang="pt-BR">Veja em outras línguas:</span>
+			<select id="language-select" class="hidden-print"
 				onchange="document.documentElement.lang=this.value">
 				<option value="pt-BR">Português Brasileiro</option>
 				<option value="en">English</option>
@@ -89,6 +159,7 @@
 				}
 			})();
 			</script>
+			<hr class="print-only">
 		</div>
 	</div>
 
@@ -101,7 +172,7 @@
 						<span lang="en">INTERESTS</span>
 						<span lang="pt-BR">INTERESSES</span>
 					</h2>
-					<ul>
+					<ul class="print-3-col">
 						<li>
 							<span lang="en">Web Architecture</span>
 							<span lang="pt-BR">Arquitetura Web</span>
@@ -123,7 +194,7 @@
 						<span lang="en">EDUCATION</span>
 						<span lang="pt-BR">EDUCAÇÃO</span>
 					</h2>
-					<ul>
+					<ul class="print-2-col">
 						<li>
 							<h3>UNESP Bauru</h3>
 							<p>
@@ -137,7 +208,6 @@
 								(2017).
 							</p>
 						</li>
-
 						<li>
 							<h3>ETEC Jaú</h3>
 							<p>
@@ -159,7 +229,7 @@
 						<span lang="en">EXPERIENCE</span>
 						<span lang="pt-BR">EXPERIÊNCIA</span>
 					</h2>
-					<ul>
+					<ul class="print-2-col">
 						<li>
 							<p>
 								<h3>UNESP - PET-BSI</h3> -
@@ -192,7 +262,7 @@
 								<span lang="pt-BR">
 									Laboratório de Tecnologia de Informática Aplicada
 								</span>
-								(<a href="www.ltia.fc.unesp.br">www.ltia.fc.unesp.br</a>).
+								(<a href="http://www.ltia.fc.unesp.br">Site Ltia</a>).
 							</p>
 							<ul>
 								<li>
@@ -218,7 +288,7 @@
 										LTIA em conjunto com
 									</span>
 									Global Digital Community
-									(<a href="globaldigitalcommunity.com">globaldigitalcommunity.com</a>).
+									(<a href="http://globaldigitalcommunity.com">Site GlobalDigital</a>).
 								</li>
 							</ul>
 						</li>
@@ -297,7 +367,7 @@
 					<h3>
 						Skills
 					</h3>
-					<ul>
+					<ul class="print-3-col">
 						<li>
 							HTML
 							<div class="progress">
@@ -425,7 +495,7 @@
 						<span lang="en">LANGUAGES</span>
 						<span lang="pt-BR">LÍNGUAS</span>
 					</h2>
-					<ul>
+					<ul class="print-3-col">
 						<li>
 							<h3>
 								<span lang="en">Portuguese</span>
@@ -482,7 +552,7 @@
 					<p>
 						<span>luispuhl@gmail.com</span> <br>
 						<span>
-							<a href="https://github.com/luis-puhl">https://github.com/luis-puhl</a>
+							<a href="https://github.com/luis-puhl">GitHub</a>
 						</span> <br>
 						<span>+55 14 9 9135-9740</span> <br>
 						<span>Rua dos Radioamadores 1-75 – Jd. Brasil, 17011-090</span> <br>
@@ -533,6 +603,8 @@
 			</div>
 		</div><!-- row -->
 
+	</div><!-- container -->
+	<div class="container">
 		<footer class="hidden-print">
 			<hr>
 			<p>
@@ -549,7 +621,7 @@
 					title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
 			</div>
 		</footer>
-	</div><!-- container -->
+	</div>
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>

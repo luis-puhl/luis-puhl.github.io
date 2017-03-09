@@ -1,7 +1,7 @@
 /* eslint-env worker, serviceworker */
 'use strict';
 
-var appVersion = 5;
+var appVersion = 6;
 var cacheName = 'luis-puhl-resume-v' + appVersion;
 var cacheWhitelist = [
 	cacheName
