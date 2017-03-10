@@ -92,8 +92,9 @@ function promiseAny(promises) {
 
 function isBlacklisted(urlBlaklist, url) {
 	var tests = urlBlaklist.reduce((acc, val)=>{
-		if (typeof val == 'string' && val === url){ return ++acc; }
-		if (typeof val.test == 'function' && val.test(url)){ return ++acc; }
+		if (typeof val == 'string' && val === url){ ++acc; }
+		if (typeof val.test == 'function' && val.test(url)){ ++acc; }
+		if ( (url.split(val).length > 1) ){ ++acc; }
 		return acc;
 	}, 0);
 	return (tests > 0);
@@ -103,24 +104,17 @@ function isBlacklisted(urlBlaklist, url) {
  * This is the proxy stuff
 **/
 self.addEventListener('fetch', function(event) {
-	var url = event.request.url + "";
-	console.log('[ServiceWorker] Asked to fetch ', url);
-	var black = isBlacklisted(cacheFilesBlackList, url);
-	console.log('isBlacklisted test -> ', black);
 	// if (file is blacklisted) respond with network, do not cache
-	if ( black ){
-		console.log('URL is blacklisted, going NET for ', url);
+	if ( isBlacklisted(cacheFilesBlackList, event.request.url) ){
 		event.respondWith(fetch(event.request));
 		return;
 	}
 	event.respondWith(
 		promiseAny([
 			caches.match(event.request).then(function (cacheResponse) {
-				console.log('got CACHE response for ',  event.request.url);
 				return cacheResponse;
 			}),
 			fetch(event.request).then(function (networkResp) {
-				console.log('got NET response for ',  event.request.url);
 				// if (not a good status) skip the cache
 				// good status is: got RESPONSE, it is HTTP OKAY and is SAME ORIGIN
 				if(!networkResp || networkResp.status !== 200 || networkResp.type !== 'basic') {
