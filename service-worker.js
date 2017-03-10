@@ -24,6 +24,11 @@ var filesToCache = [
 	'https://code.jquery.com/jquery-3.1.1.min.js',
 	'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
 ];
+var cacheFilesBlackList = [
+	/google-analytics/gi,
+	'https://www.gstatic.com/firebasejs/3.7.0/firebase.js',
+	'https://cdn.firebase.com/js/client/2.4.2/firebase.js'
+];
 
 
 /**
@@ -69,32 +74,65 @@ self.addEventListener('message', function(event) {
 
 
 /**
+ * Promise.race is no good to us because it rejects if
+ * a promise rejects before fulfilling. Let's make a proper
+ * race function:
+ */
+function promiseAny(promises) {
+	return new Promise((resolve, reject) => {
+		// make sure promises are all promises
+		promises = promises.map(p => Promise.resolve(p));
+		// resolve this promise as soon as one resolves
+		promises.forEach(p => p.then(resolve));
+		// reject if all promises reject
+		promises.reduce((a, b) => a.catch(() => b))
+			.catch(() => reject(Error("All failed")));
+	});
+};
+
+function isBlacklisted(urlBlaklist, url) {
+	var tests = urlBlaklist.reduce((acc, val)=>{
+		if (typeof val == 'string' && val === url){ return ++acc; }
+		if (typeof val.test == 'function' && val.test(url)){ return ++acc; }
+		return acc;
+	}, 0);
+	return (tests > 0);
+}
+
+/**
  * This is the proxy stuff
 **/
-this.addEventListener('fetch', function(event) {
-	// console.log('[ServiceWorker] Asked to fetch ', event.request.url);
+self.addEventListener('fetch', function(event) {
+	var url = event.request.url + "";
+	console.log('[ServiceWorker] Asked to fetch ', url);
+	var black = isBlacklisted(cacheFilesBlackList, url);
+	console.log('isBlacklisted test -> ', black);
+	// if (file is blacklisted) respond with network, do not cache
+	if ( black ){
+		console.log('URL is blacklisted, going NET for ', url);
+		event.respondWith(fetch(event.request));
+		return;
+	}
 	event.respondWith(
-		caches.match(event.request).then(function(resp) {
-			if (resp){
-				// console.log('[ServiceWorker] Fetch ', event.request.url, ' from cache');
-				return resp;
-			}
-			// request and response are streams, they can be read only once
-			return fetch(event.request.clone()).then(function(response) {
+		promiseAny([
+			caches.match(event.request).then(function (cacheResponse) {
+				console.log('got CACHE response for ',  event.request.url);
+				return cacheResponse;
+			}),
+			fetch(event.request).then(function (networkResp) {
+				console.log('got NET response for ',  event.request.url);
 				// if (not a good status) skip the cache
 				// good status is: got RESPONSE, it is HTTP OKAY and is SAME ORIGIN
-				if(!response || response.status !== 200 || response.type !== 'basic') {
-					return response;
+				if(!networkResp || networkResp.status !== 200 || networkResp.type !== 'basic') {
+					return networkResp;
 				}
-
-				var responseToCache = response.clone();
+				var responseToCache = networkResp.clone();
 				caches.open(cacheName).then(function(cache) {
 					cache.put(event.request, responseToCache);
-					// console.log('[ServiceWorker] Fetch ', event.request.url, ' from network to cache');
 				});
-				return response;
-			});
-		}).catch(function() {
+				return networkResp;
+			})
+		]).catch(function() {
 			return caches.match('/no-resource.txt');
 		})
 	);
