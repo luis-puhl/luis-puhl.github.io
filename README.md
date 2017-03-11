@@ -12,7 +12,7 @@ Sometime in the near future bootstrap will be removed in favor of material desin
 
 # HTML and CSS i18l
 
-To provide a multilanguage site for everey translatable text element you see in the page there are two (or more) source html code.
+To provide a multilanguage site for every translatable text element you see in the page there are two (or more) source html code.
 
 For each language there is an element with the attribute `lang=` set.
 
@@ -52,7 +52,7 @@ I'm lazy, so instead of making another document just to print and send formaly I
 The resulting documens are [LuísPuhl-Currículo.pdf](LuísPuhl-Currículo.pdf) for Portuguese and 
 [LuísPuhl-Resume.pdf](LuísPuhl-Resume.pdf) for the English version. 
 
-# Offile Site
+# Offline Site
 
 I've put some work with **Service Workers** as defined in 
 [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
