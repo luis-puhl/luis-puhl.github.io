@@ -1,0 +1,106 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="resume-app">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+
+		<res-header-pannel>
+			<res-header>LUÍS PUHL</res-header>
+			<res-profile lang="en">
+				Professional aligned to innovation with focus on problem
+				solving through the use of emerging technologies.
+			</res-profile>
+			<res-profile lang="pt-BR">
+				Profissional alinhado à inovação com enfoque na resolução
+				de problemas através do uso de tecnologias emergentes.
+			</res-profile>
+			<res-download lang="en" href="./LuísPuhl-Resume.pdf">
+				Download PDF
+			</res-download>
+			<res-download lang="pt-BR" href="./LuísPuhl-Currículo.pdf">
+				Baixar PDF
+			</res-download>
+			<res-lang class="hidden-print">
+				<span lang="en">See in other languages:</span>
+				<span lang="pt-BR">Veja em outras línguas:</span>
+				<res-lang-select>
+					<option value="pt-BR">Português Brasileiro</option>
+					<option value="en">English</option>
+				</res-lang-select>
+			</res-lang>
+		</res-header-pannel>
+
+		<res-interests-container lang="en">
+			<h2>INTERESTS</h2>
+			<res-interest>Web Architecture</res-interest>
+			<res-interest>Server-side development (back-end)</res-interest>
+			<res-interest>IoT - Cloud-Device integration</res-interest>
+		</res-interests-container>
+		<res-interests-container lang="pt-BR">
+			<h2>INTERESSES</h2>
+			<res-interest>Arquitetura Web</res-interest>
+			<res-interest>Desenvolvimento em servidores (back-end)</res-interest>
+			<res-interest>IoT - Integração dispositivo-nuvem</res-interest>
+		</res-interests-container>
+
+		<res-education-container lang="en">
+			<h2>EDUCATION</h2>
+			<res-education>
+				<h3>UNESP Bauru</h3>
+				São Paulo State University
+				“Júlio de Mesquita Filho” - UNESP (Bauru - SP)
+				<br>
+				Bachelor of Computer Science (2017).
+			</res-education>
+			<res-education>
+				<h3>ETEC Jaú</h3>
+				Paula Souza Center
+				 – ETEC “Joaquim Ferreira do Amaral” (Jaú - SP)
+				<br>
+				IT Technician (2011).
+			</res-education>
+		</res-education-container>
+		<res-education-container lang="pt-BR">
+			<h2>EDUCAÇÃO</h2>
+			<res-education>
+				<h3>UNESP Bauru</h3>
+				Universidade Estadual Paulista
+				“Júlio de Mesquita Filho” - UNESP (Bauru - SP)
+				<br>
+				Bacharelado em Ciência da Computação (2017).
+			</res-education>
+			<res-education>
+				<h3>ETEC Jaú</h3>
+				Centro Paula Souza
+				 – ETEC “Joaquim Ferreira do Amaral” (Jaú - SP)
+				<br>
+				Técnico de Informática (2011).
+			</res-education>
+		</res-education-container>
+
+		<res-experience></res-experience>
+		<res-skills></res-skills>
+		<res-languages></res-languages>
+		<res-contact></res-contact>
+	</template>
+
+	<script>
+		class MyApplication extends Polymer.Element {
+			static get is() { return 'resume-app'; }
+			static get properties() {
+				return {
+					prop1: {
+						type: String,
+						value: 'resume-app'
+					}
+				};
+			}
+		}
+
+		window.customElements.define(MyApplication.is, MyApplication);
+	</script>
+</dom-module>
