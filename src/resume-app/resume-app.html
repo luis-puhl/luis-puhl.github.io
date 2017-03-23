@@ -1,5 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<link rel="import" href="res-header-pannel.html">
+<link rel="import" href="res-header.html">
+<link rel="import" href="res-profile.html">
+
 <dom-module id="resume-app">
 	<template>
 		<style>
@@ -7,6 +11,16 @@
 				display: block;
 			}
 		</style>
+		<span class="hidden-print" lang="en">See in other languages:</span>
+		<span class="hidden-print" lang="pt-BR">Veja em outras línguas:</span>
+		<select id="language-select" class="hidden-print" onchange="document.documentElement.lang=this.value">
+			<option value="pt-BR">Português Brasileiro</option>
+			<option value="en" selected="true">English</option>
+		</select>
+		<select id="language-select" class="hidden-print" data="{{lang}}">
+			<option value="pt-BR">Português Brasileiro</option>
+			<option value="en" selected="true">English</option>
+		</select>
 
 		<res-header-pannel>
 			<res-header>LUÍS PUHL</res-header>
@@ -444,11 +458,19 @@
 			static get is() { return 'resume-app'; }
 			static get properties() {
 				return {
-					prop1: {
+					/*
+					lang: {
 						type: String,
-						value: 'resume-app'
+						value: 'en',
+						reflectToAttribute: true,
+						notify: true,
+						observer: '_langObserver'
 					}
+					*/
 				};
+			}
+			_langObserver(newValue, oldValue) {
+				console.log('app changed language');
 			}
 		}
 

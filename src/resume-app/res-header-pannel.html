@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="res-header-pannel">
+	<template>
+		<style>
+		</style>
+		<slot></slot>
+	</template>
+	<script>
+		// performance logging
+		window.performance && performance.mark && performance.mark('res-header-pannel - before register');
+
+		class ResHeaderPannel extends Polymer.Element {
+			static get is() { return 'res-header-pannel'; }
+			static get properties() { return {
+				page: {
+					type: String,
+					reflectToAttribute: true,
+					observer: '_pageChanged'
+				}
+			}}
+			constructor() {
+				super();
+				window.performance && performance.mark && performance.mark('res-header-pannel.created');
+				// Custom elements polyfill safe way to indicate an element has been upgraded.
+				this.removeAttribute('unresolved');
+			}
+		}
+		customElements.define(ResHeaderPannel.is, ResHeaderPannel);
+	</script>
+</dom-module>

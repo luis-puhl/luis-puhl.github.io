@@ -1,19 +1,4 @@
-.affix#nav-sidebar{
-	position:fixed;
-	top:20px
-}
-body {
-	position: relative;
-}
-#nav-sidebar .nav > .active > a,
-#nav-sidebar .nav > .active:hover > a,
-#nav-sidebar .nav > .active:focus > a {
-	padding-left: 18px;
-	font-weight: bold;
-	color: #563d7c;
-	background-color: transparent;
-	border-left: 2px solid #563d7c;
-}
-.progress-bar {
-	min-width: 2em;
+html:not(:lang(pt-BR)) :lang(pt-BR),
+html:not(:lang(en)) :lang(en){
+	display: none;
 }
