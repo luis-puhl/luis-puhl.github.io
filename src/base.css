@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero {
+  background: url('/images/backdrop.jpeg');
+  background-size: cover;
+}
+
+.linkedin-logo{
+  color: rgb(10, 102, 194)
+}
